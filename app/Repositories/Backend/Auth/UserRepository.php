@@ -103,7 +103,10 @@ class UserRepository extends BaseRepository
             $user = parent::create([
                 'first_name' => $data['first_name'],
                 'last_name' => $data['last_name'],
-                'email' => $data['email'],
+                'email' => $data['email'],'category_id' => $data['category_id'],
+                'address' => $data['address'],
+                'work' => $data['work'],
+                'designation' => $data['designation'],
                 'timezone' => $data['timezone'],
                 'password' => $data['password'],
                 'active' => isset($data['active']) && $data['active'] == '1' ? 1 : 0,

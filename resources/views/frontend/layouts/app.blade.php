@@ -22,7 +22,7 @@
 
         @stack('after-styles')
     </head>
-    <body>
+    <body  style="background-color: #00a67c">
         <div id="app">
             @include('includes.partials.logged-in-as')
             @include('frontend.includes.nav')

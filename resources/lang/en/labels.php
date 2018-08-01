@@ -47,6 +47,19 @@ return [
                     'total'           => 'role total|roles total',
                 ],
             ],
+            'categories' => [
+                'create'     => 'Create Category',
+                'edit'       => 'Edit Category',
+                'management' => 'Category Management',
+
+                'table' => [
+                    'number_of_users' => 'Number of Users',
+                    'permissions'     => 'Permissions',
+                    'category'            => 'Category',
+                    'sort'            => 'Sort',
+                    'total'           => 'category total|categories total',
+                ],
+            ],
 
             'users' => [
                 'active'              => 'Active Users',

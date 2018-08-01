@@ -38,7 +38,75 @@
                             </div><!--col-->
                         </div><!--row-->
 
-                        <div class="row">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                {{ html()->label(__('validation.attributes.frontend.address'))->for('address') }}
+
+                                {{ html()->textarea('address')
+                                    ->class('form-control')
+                                    ->placeholder(__('validation.attributes.frontend.address'))
+                                    ->attribute('maxlength', 500)
+                                    ->required() }}
+                            </div><!--form-group-->
+                        </div><!--col-->
+                    </div><!--row-->
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                {{ html()->label(__('validation.attributes.frontend.work'))->for('work') }}
+
+                                {{ html()->text('work')
+                                    ->class('form-control')
+                                    ->placeholder(__('validation.attributes.frontend.work'))
+                                    ->attribute('maxlength', 200)
+                                    ->required() }}
+                            </div><!--form-group-->
+                        </div><!--col-->
+                    </div><!--row-->
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                {{ html()->label(__('validation.attributes.frontend.designation'))->for('designation') }}
+
+                                {{ html()->text('designation')
+                                    ->class('form-control')
+                                    ->placeholder(__('validation.attributes.frontend.designation'))
+                                    ->attribute('maxlength', 200)
+                                    ->required() }}
+                            </div><!--form-group-->
+                        </div><!--col-->
+                    </div><!--row-->
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                {{ html()->label(__('validation.attributes.frontend.thesis'))->for('thesis') }}
+
+                                {{ html()->file('thesis')
+                                    ->class('form-control')
+                                 }}
+                            </div><!--form-group-->
+                        </div><!--col-->
+                    </div><!--row-->
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                {{ html()->label(__('validation.attributes.frontend.category'))->for('category') }}
+
+                                {{ html()->select('category_id', $categories)
+                                    ->class('form-control')
+                                    ->placeholder(__('validation.attributes.frontend.category'))
+                                    ->required() }}
+                            </div><!--form-group-->
+                        </div><!--col-->
+                    </div><!--row-->
+
+
+                    <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
@@ -106,8 +174,14 @@
                     
                 </div><!-- card-body -->
             </div><!-- card -->
+            <br>
+            <br>
+            <br>
+
         </div><!-- col-md-8 -->
     </div><!-- row -->
+
+
 @endsection
 
 @push('after-scripts')

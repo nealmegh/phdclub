@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend\Auth;
 
+use App\category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Helpers\Frontend\Auth\Socialite;
@@ -48,9 +49,14 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
+        $categoryModels = category::all();
+        foreach ($categoryModels as $categoryModel)
+        {
+            $categories[$categoryModel->id] =  $categoryModel->name;
+        }
         abort_unless(config('access.registration'), 404);
 
-        return view('frontend.auth.register')
+        return view('frontend.auth.register', ['categories' => $categories])
             ->withSocialiteLinks((new Socialite)->getSocialLinks());
     }
 
@@ -62,7 +68,8 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request)
     {
-        $user = $this->userRepository->create($request->only('first_name', 'last_name', 'email', 'password'));
+
+        $user = $this->userRepository->create($request->only('first_name', 'last_name', 'email', 'password', 'category_id', 'address', 'work', 'designation'));
 
         // If the user must confirm their email or their account requires approval,
         // create the account but don't log them in.

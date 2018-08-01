@@ -24,6 +24,13 @@ return [
                 'management' => 'Role Management',
                 'main'       => 'Roles',
             ],
+            'categories' => [
+                'all'        => 'All Categories',
+                'create'     => 'Create Category',
+                'edit'       => 'Edit Category',
+                'management' => 'Category Management',
+                'main'       => 'Categories',
+            ],
 
             'users' => [
                 'all'             => 'All Users',

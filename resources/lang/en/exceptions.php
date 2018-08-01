@@ -25,6 +25,14 @@ return [
                 'not_found'         => 'That role does not exist.',
                 'update_error'      => 'There was a problem updating this role. Please try again.',
             ],
+            'categories' => [
+                'already_exists'    => 'That category already exists. Please choose a different name.',
+                'create_error'      => 'There was a problem creating this category. Please try again.',
+                'delete_error'      => 'There was a problem deleting this category. Please try again.',
+                'has_users'         => 'You can not delete a category with associated users.',
+                'not_found'         => 'That category does not exist.',
+                'update_error'      => 'There was a problem updating this category. Please try again.',
+            ],
 
             'users' => [
                 'already_confirmed'    => 'This user is already confirmed.',

@@ -19,6 +19,11 @@ return [
             'deleted' => 'The role was successfully deleted.',
             'updated' => 'The role was successfully updated.',
         ],
+        'categories' => [
+            'created' => 'The category was successfully created.',
+            'deleted' => 'The category was successfully deleted.',
+            'updated' => 'The category was successfully updated.',
+        ],
 
         'users' => [
             'cant_resend_confirmation' => 'The application is currently set to manually approve users.',

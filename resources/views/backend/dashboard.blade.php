@@ -10,7 +10,10 @@
                     <strong>{{ __('strings.backend.dashboard.welcome') }} {{ $logged_in_user->name }}!</strong>
                 </div><!--card-header-->
                 <div class="card-block">
-                    {!! __('strings.backend.welcome') !!}
+{{--                    {!! __('strings.backend.welcome') !!}--}}
+                    <p>
+                        This is the admin area of PhD Club.
+                    </p>
                 </div><!--card-block-->
             </div><!--card-->
         </div><!--col-->

@@ -64,4 +64,17 @@ Route::group([
     Route::group(['namespace' => 'Role'], function () {
         Route::resource('role', 'RoleController', ['except' => ['show']]);
     });
+
+    /*
+     * Category Management
+     */
+    Route::group(['namespace' => 'Category'], function () {
+        /*
+         * Category CRUD
+         */
+        Route::resource('category', 'CategoryController');
+
+    });
+
+
 });
