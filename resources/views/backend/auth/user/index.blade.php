@@ -6,6 +6,13 @@
     @include('backend.auth.user.includes.breadcrumb-links')
 @endsection
 
+@section('header')
+    <script type="text/javascript" language="javascript" src=" {{ asset('js/jquery/jquery.min.js') }}"></script>
+@endsection
+@section('style')
+    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+@endsection
+
 @section('content')
 <div class="card">
     <div class="card-body">
@@ -24,18 +31,22 @@
         <div class="row mt-4">
             <div class="col">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table" id="table">
                         <thead>
                         <tr>
                             <th>{{ __('labels.backend.access.users.table.last_name') }}</th>
                             <th>{{ __('labels.backend.access.users.table.first_name') }}</th>
                             <th>{{ __('labels.backend.access.users.table.email') }}</th>
+                            <th>{{ __('labels.backend.access.users.table.address') }}</th>
+                            <th>{{ __('labels.backend.access.users.table.designation') }}</th>
+                            <th>{{ __('labels.backend.access.users.table.work') }}</th>
+                            <th>{{ __('labels.backend.access.users.table.category') }}</th>
                             <th>{{ __('labels.backend.access.users.table.confirmed') }}</th>
-                            <th>{{ __('labels.backend.access.users.table.roles') }}</th>
-                            <th>{{ __('labels.backend.access.users.table.other_permissions') }}</th>
-                            <th>{{ __('labels.backend.access.users.table.social') }}</th>
+                            <!-- <th>{{ __('labels.backend.access.users.table.roles') }}</th> -->
+                            <!-- <th>{{ __('labels.backend.access.users.table.other_permissions') }}</th> -->
+                            <!-- <th>{{ __('labels.backend.access.users.table.social') }}</th> -->
                             <th>{{ __('labels.backend.access.users.table.last_updated') }}</th>
-                            <th>{{ __('labels.general.actions') }}</th>
+                            <!-- <th>{{ __('labels.general.actions') }}</th> -->
                         </tr>
                         </thead>
                         <tbody>
@@ -44,12 +55,16 @@
                                 <td>{{ $user->last_name }}</td>
                                 <td>{{ $user->first_name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td>{{ $user->address }}</td>
+                                <td>{{ $user->designation }}</td>
+                                <td>{{ $user->work }}</td>
+                                <td>{{ $user->category->name }}</td>
                                 <td>{!! $user->confirmed_label !!}</td>
-                                <td>{!! $user->roles_label !!}</td>
-                                <td>{!! $user->permissions_label !!}</td>
-                                <td>{!! $user->social_buttons !!}</td>
+                                <!-- <td>{!! $user->roles_label !!}</td> -->
+                                <!-- <td>{!! $user->permissions_label !!}</td> -->
+                                <!-- <td>{!! $user->social_buttons !!}</td> -->
                                 <td>{{ $user->updated_at->diffForHumans() }}</td>
-                                <td>{!! $user->action_buttons !!}</td>
+                                <!-- <td>{!! $user->action_buttons !!}</td> -->
                             </tr>
                         @endforeach
                         </tbody>
@@ -72,4 +87,29 @@
         </div><!--row-->
     </div><!--card-body-->
 </div><!--card-->
+
+
+<script src="{{asset('js/dataTables.js')}}"></script>
+<script type="text/javascript">
+    var $jq = jQuery.noConflict();
+
+    $jq(document).ready(function() {
+        $jq('#table').DataTable({
+            processing: true,
+            serverSide: false,
+            ajax: '{{ route('datatable/getdata') }}',
+            columns: [
+                {data: 'last_name'},
+                {data: 'first_name'},
+                {data: 'email'},
+                {data: 'address'},
+                {data: 'designation'},
+                {data: 'work'},
+                {data: 'discipline_name'},
+                {data: 'confirmed_label'},
+                {data: 'updated_at'},
+            ]
+        });
+    });
+</script>
 @endsection

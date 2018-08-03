@@ -31,3 +31,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
      */
     include_route_files(__DIR__.'/backend/');
 });
+
+// Display view
+Route::get('datatable', 'DataTablesController@datatable');
+// Get Data
+Route::get('datatable/getdata', 'DataTablesController@getPosts')->name('datatable/getdata');
