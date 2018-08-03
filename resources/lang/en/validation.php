@@ -203,6 +203,7 @@ return [
             'designation'               => 'Designation',
             'password'                  => 'Password',
             'category'                  => 'Category',
+            'country'                   => 'Country',
             'password_confirmation'     => 'Password Confirmation',
             'phone'                     => 'Phone',
             'message'                   => 'Message',

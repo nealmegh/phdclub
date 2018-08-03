@@ -41,6 +41,7 @@ class User extends Authenticatable
         'avatar_type',
         'avatar_location',
         'password',
+        'country',
         'password_changed_at',
         'active',
         'confirmation_code',
@@ -52,8 +53,6 @@ class User extends Authenticatable
         'work',
         'designation',
         'thesis',
-
-
     ];
 
     /**

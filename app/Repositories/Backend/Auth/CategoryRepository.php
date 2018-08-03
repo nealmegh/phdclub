@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Backend\Auth;
 
-use App\Category;
+use App\category;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;

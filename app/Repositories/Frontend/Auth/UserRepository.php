@@ -97,6 +97,7 @@ class UserRepository extends BaseRepository
                 'last_name'         => $data['last_name'],
                 'email'             => $data['email'],
                 'category_id'       => $data['category_id'],
+                'country'           => $data['country'],
                 'address'           => $data['address'],
                 'work'              => $data['work'],
                 'designation'       => $data['designation'],

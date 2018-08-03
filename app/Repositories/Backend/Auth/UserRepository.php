@@ -101,17 +101,19 @@ class UserRepository extends BaseRepository
     {
         return DB::transaction(function () use ($data) {
             $user = parent::create([
-                'first_name' => $data['first_name'],
-                'last_name' => $data['last_name'],
-                'email' => $data['email'],'category_id' => $data['category_id'],
-                'address' => $data['address'],
-                'work' => $data['work'],
-                'designation' => $data['designation'],
-                'timezone' => $data['timezone'],
-                'password' => $data['password'],
-                'active' => isset($data['active']) && $data['active'] == '1' ? 1 : 0,
+                'first_name'        => $data['first_name'],
+                'last_name'         => $data['last_name'],
+                'email'             => $data['email'],
+                'category_id'       => $data['category_id'],
+                'country'           => $data['country'],
+                'address'           => $data['address'],
+                'work'              => $data['work'],
+                'designation'       => $data['designation'],
+                'timezone'          => $data['timezone'],
+                'password'          => $data['password'],
+                'active'            => isset($data['active']) && $data['active'] == '1' ? 1 : 0,
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
-                'confirmed' => isset($data['confirmed']) && $data['confirmed'] == '1' ? 1 : 0,
+                'confirmed'         => isset($data['confirmed']) && $data['confirmed'] == '1' ? 1 : 0,
             ]);
 
             // See if adding any additional permissions
