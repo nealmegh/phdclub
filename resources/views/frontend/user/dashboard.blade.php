@@ -23,11 +23,14 @@
                                         {{ $logged_in_user->name }}<br/>
                                     </h4>
 
+
                                     <p class="card-text">
                                         <small>
                                             <i class="fas fa-envelope"></i> {{ $logged_in_user->email }}<br/>
-                                            <i class="fas fa-calendar-check"></i> {{ __('strings.frontend.general.joined') }} {{ $logged_in_user->created_at->timezone(get_user_timezone())->format('F jS, Y') }}
-                                        </small>
+                                            <i class="fas fa-calendar-check"></i> {{ __('strings.frontend.general.joined') }} {{ $logged_in_user->created_at->timezone(get_user_timezone())->format('F jS, Y') }}<br/>
+                                            <i class="fas fa-calendar-check"></i> {{ 'DOB'}} <?php use Carbon\Carbon; $birthday = Carbon::parse($logged_in_user->birthday); echo $birthday->timezone(get_user_timezone())->format('F jS, Y'); ?>
+
+                                        </small>;
                                     </p>
 
                                     <p class="card-text">
@@ -46,10 +49,22 @@
                             </div>
 
                             <div class="card mb-4">
-                                <div class="card-header">Header</div>
+                                <div class="card-header">Academic Info</div>
                                 <div class="card-body">
-                                    <h4 class="card-title">Info card title</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h6 class="card-title">PhD Topic</h6>
+                                    <p class="card-text">{{$logged_in_user->topic}}</p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title">Institute</h6>
+                                    <p class="card-text">{{$logged_in_user->institution}}</p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title">Supervisor</h6>
+                                    <p class="card-text">{{$logged_in_user->supervisor}}</p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title">Country</h6>
+                                    <p class="card-text">{{$logged_in_user->country_phd}}</p>
                                 </div>
                             </div><!--card-->
                         </div><!--col-md-4-->
@@ -59,80 +74,80 @@
                                 <div class="col">
                                     <div class="card mb-4">
                                         <div class="card-header">
-                                            Item
+                                            Welcome
                                         </div><!--card-header-->
 
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
+                                            Welcome to PhD Club. This is user Dashboard.
                                         </div><!--card-body-->
                                     </div><!--card-->
                                 </div><!--col-md-6-->
                             </div><!--row-->
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
+                            {{--<div class="row">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="card mb-4">--}}
+                                        {{--<div class="card-header">--}}
+                                            {{--Item--}}
+                                        {{--</div><!--card-header-->--}}
 
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
-                            </div><!--row-->
+                                        {{--<div class="card-body">--}}
+                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                                        {{--</div><!--card-body-->--}}
+                                    {{--</div><!--card-->--}}
+                                {{--</div><!--col-md-6-->--}}
+                            {{--</div><!--row-->--}}
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
+                            {{--<div class="row">--}}
+                                {{--<div class="col">--}}
+                                    {{--<div class="card mb-4">--}}
+                                        {{--<div class="card-header">--}}
+                                            {{--Item--}}
+                                        {{--</div><!--card-header-->--}}
 
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
+                                        {{--<div class="card-body">--}}
+                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                                        {{--</div><!--card-body-->--}}
+                                    {{--</div><!--card-->--}}
+                                {{--</div><!--col-md-6-->--}}
 
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
+                                {{--<div class="col">--}}
+                                    {{--<div class="card mb-4">--}}
+                                        {{--<div class="card-header">--}}
+                                            {{--Item--}}
+                                        {{--</div><!--card-header-->--}}
 
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
+                                        {{--<div class="card-body">--}}
+                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                                        {{--</div><!--card-body-->--}}
+                                    {{--</div><!--card-->--}}
+                                {{--</div><!--col-md-6-->--}}
 
-                                <div class="w-100"></div>
+                                {{--<div class="w-100"></div>--}}
 
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
+                                {{--<div class="col">--}}
+                                    {{--<div class="card mb-4">--}}
+                                        {{--<div class="card-header">--}}
+                                            {{--Item--}}
+                                        {{--</div><!--card-header-->--}}
 
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
+                                        {{--<div class="card-body">--}}
+                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                                        {{--</div><!--card-body-->--}}
+                                    {{--</div><!--card-->--}}
+                                {{--</div><!--col-md-6-->--}}
 
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
+                                {{--<div class="col">--}}
+                                    {{--<div class="card mb-4">--}}
+                                        {{--<div class="card-header">--}}
+                                            {{--Item--}}
+                                        {{--</div><!--card-header-->--}}
 
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
+                                        {{--<div class="card-body">--}}
+                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                                        {{--</div><!--card-body-->--}}
+                                    {{--</div><!--card-->--}}
+                                {{--</div><!--col-md-6-->--}}
                             </div><!--row-->
                         </div><!--col-md-8-->
                     </div><!-- row -->

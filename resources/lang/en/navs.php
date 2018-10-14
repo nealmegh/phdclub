@@ -31,6 +31,7 @@ return [
             'change_password' => 'Change Password',
             'my_information'  => 'My Information',
             'profile'         => 'Profile',
+            'upload_identity' => 'Identity Upload'
         ],
     ],
 ];

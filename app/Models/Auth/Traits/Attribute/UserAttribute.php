@@ -59,6 +59,26 @@ trait UserAttribute
         return '<a href="'.route('admin.auth.user.confirm', $this).'" data-toggle="tooltip" data-placement="top" title="'.__('buttons.backend.access.users.confirm').'" name="confirm_item"><span class="badge badge-danger" style="cursor:pointer">'.__('labels.general.no').'</span></a>';
     }
 
+
+    public function getVerifiedLabelAttribute()
+    {
+        if ($this->isVerified())   {
+//            if ($this->id != 1 && $this->id != auth()->id()) {
+//                return '<a href="'.route(
+//                        'admin.auth.user.unconfirm',
+//                        $this
+//                    ).'" data-toggle="tooltip" data-placement="top" title="'.__('buttons.backend.access.users.unconfirm').'" name="confirm_item"><span class="badge badge-success" style="cursor:pointer">'.__('labels.general.yes').'</span></a>';
+//            } else {
+                return '<span class="badge badge-success">'.__('labels.general.yes').'</span>';
+//            }
+        }
+        else{
+
+            return '<span class="badge badge-danger" >'.__('labels.general.no').'</span>';
+        }
+
+    }
+
     /**
      * @return string
      */
@@ -115,6 +135,12 @@ trait UserAttribute
     public function getPictureAttribute()
     {
         return $this->getPicture();
+    }
+
+
+    public function getPhotoIDAttribute()
+    {
+        return $this->getPhotoID();
     }
 
     /**
@@ -234,6 +260,15 @@ trait UserAttribute
         return '';
     }
 
+    public function getVerifiedButtonAttribute()
+    {
+        if (! $this->isVerified() ) {
+            return '<a href="'.route('admin.auth.user.account.verify.show', $this).'" class="dropdown-item">'.__('buttons.backend.access.users.verify').'</a> ';
+        }
+
+        return '';
+    }
+
     /**
      * @return string
      */
@@ -295,6 +330,7 @@ trait UserAttribute
 			  '.$this->change_password_button.'
 			  '.$this->status_button.'
 			  '.$this->confirmed_button.'
+			  '.$this->verified_button.'
 			  '.$this->delete_button.'
 			</div>
 		  </div>

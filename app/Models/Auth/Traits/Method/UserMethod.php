@@ -51,6 +51,19 @@ trait UserMethod
         return false;
     }
 
+    public function getPhotoID()
+    {
+        if ($this->upload_status == 1) {
+
+                return url('storage/'.$this->upload_identity);
+        }
+
+
+
+        return false;
+    }
+
+
     /**
      * @param $provider
      *
@@ -91,6 +104,11 @@ trait UserMethod
         return $this->confirmed == 1;
     }
 
+
+    public function isVerified()
+    {
+        return $this->identity_approval == 1;
+    }
     /**
      * @return bool
      */

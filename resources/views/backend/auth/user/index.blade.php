@@ -42,17 +42,18 @@
                             <th>{{ __('labels.backend.access.users.table.work') }}</th>
                             <th>{{ __('labels.backend.access.users.table.category') }}</th>
                             <th>{{ __('labels.backend.access.users.table.confirmed') }}</th>
-                            <!-- <th>{{ __('labels.backend.access.users.table.roles') }}</th> -->
-                            <!-- <th>{{ __('labels.backend.access.users.table.other_permissions') }}</th> -->
-                            <!-- <th>{{ __('labels.backend.access.users.table.social') }}</th> -->
+                            <th>{{ __('labels.backend.access.users.table.verified') }}</th>
+                             <th>{{ __('labels.backend.access.users.table.roles') }}</th>
+                             <th>{{ __('labels.backend.access.users.table.other_permissions') }}</th>
+                             <th>{{ __('labels.backend.access.users.table.social') }}</th>
                             <th>{{ __('labels.backend.access.users.table.last_updated') }}</th>
-                            <!-- <th>{{ __('labels.general.actions') }}</th> -->
+                             <th>{{ __('labels.general.actions') }}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach ($users as $user)
                             <tr>
-                                <td>{{ $user->last_name }}</td>
+                                <td><a href=/admin/auth/user/{{$user->id}}>{{ $user->last_name }}</a></td>
                                 <td>{{ $user->first_name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->address }}</td>
@@ -60,11 +61,13 @@
                                 <td>{{ $user->work }}</td>
                                 <td>{{ $user->category->name }}</td>
                                 <td>{!! $user->confirmed_label !!}</td>
-                                <!-- <td>{!! $user->roles_label !!}</td> -->
-                                <!-- <td>{!! $user->permissions_label !!}</td> -->
-                                <!-- <td>{!! $user->social_buttons !!}</td> -->
+                                <td>{!! $user->verified_label !!}</td>
+                                 <td>{!! $user->roles_label !!}</td>
+                               <td>{!! $user->permissions_label !!}</td>
+                                <td>{!! $user->social_buttons !!}</td>
                                 <td>{{ $user->updated_at->diffForHumans() }}</td>
-                                <!-- <td>{!! $user->action_buttons !!}</td> -->
+                                <td>{!! $user->action_buttons !!}</td>
+
                             </tr>
                         @endforeach
                         </tbody>

@@ -27,6 +27,7 @@ return [
                 'restore_user'       => 'Restore User',
                 'unconfirm'             => 'Un-confirm',
                 'unlink' => 'Unlink',
+                'verify'             => 'Verify User'
             ],
         ],
     ],

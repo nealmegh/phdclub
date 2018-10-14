@@ -41,6 +41,7 @@ return [
                 'edit'            => 'Edit User',
                 'main'            => 'Users',
                 'view'            => 'View User',
+                'verify'          => 'Verify User'
             ],
         ],
 

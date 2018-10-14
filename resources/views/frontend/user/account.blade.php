@@ -26,6 +26,11 @@
                                 <a href="#password" class="nav-link" aria-controls="password" role="tab" data-toggle="tab">{{ __('navs.frontend.user.change_password') }}</a>
                             </li>
                             @endif
+                            @if ($logged_in_user->canChangePassword())
+                                <li class="nav-item">
+                                    <a href="#identity" class="nav-link" aria-controls="identity" role="tab" data-toggle="tab">{{ __('navs.frontend.user.upload_identity') }}</a>
+                                </li>
+                            @endif
                         </ul>
 
                         <div class="tab-content">
@@ -42,7 +47,14 @@
                                     @include('frontend.user.account.tabs.change-password')
                                 </div><!--tab panel change password-->
                             @endif
+                            @if ($logged_in_user->canChangePassword())
+                                <div role="tabpanel" class="tab-pane fade show pt-3" id="identity" aria-labelledby="identity-tab">
+                                    @include('frontend.user.account.tabs.upload-identity')
+                                </div><!--tab panel change password-->
+                            @endif
                         </div><!--tab content-->
+
+
                     </div><!--tab panel-->
                 </div><!--card body-->
             </div><!-- card -->

@@ -183,6 +183,26 @@ class UserRepository extends BaseRepository
         });
     }
 
+
+
+    public function identityApproval(User $user, $data) :User
+    {
+        return DB::transaction(function () use ($user, $data) {
+            if ($user->update([
+                'identity_approval' => $data
+            ])) {
+
+                event(new UserUpdated($user));
+
+                return $user;
+            }
+
+            throw new GeneralException(__('exceptions.backend.access.users.update_error'));
+        });
+
+
+    }
+
     /**
      * @param User $user
      * @param      $input

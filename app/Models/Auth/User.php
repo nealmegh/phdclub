@@ -53,6 +53,17 @@ class User extends Authenticatable
         'work',
         'designation',
         'thesis',
+        'birthday',
+        'gender',
+        'topic',
+        'institution',
+        'supervisor',
+        'country_phd',
+        'city',
+        'state',
+        'zip',
+        'upload_identity',
+        'identity_approval'
     ];
 
     /**

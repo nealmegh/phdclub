@@ -29,5 +29,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
          * User Profile Specific
          */
         Route::patch('profile/update', 'ProfileController@update')->name('profile.update');
+        Route::post('profile/id-verify', 'AccountController@idVerify')->name('profile.verify');
+
     });
 });

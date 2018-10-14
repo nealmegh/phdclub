@@ -204,6 +204,8 @@ return [
             'password'                  => 'Password',
             'category'                  => 'Category',
             'country'                   => 'Country',
+            'birthday'                  => 'Birthday',
+            'gender'                    => 'Gender',
             'password_confirmation'     => 'Password Confirmation',
             'phone'                     => 'Phone',
             'message'                   => 'Message',
@@ -213,6 +215,14 @@ return [
             'old_password'              => 'Old Password',
             'timezone'                  => 'Timezone',
             'language'                  => 'Language',
+            'topic'                     => 'Phd Topic/Area',
+            'institution'               => 'Institution',
+            'supervisor'                => 'Supervisor',
+            'postcode'                  => 'Post/Zip Code',
+            'state'                     => 'State',
+            'city'                      => 'City',
+            'upload_identity'           => 'Upload Your Photo ID',
+
         ],
     ],
 ];

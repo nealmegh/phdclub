@@ -55,6 +55,11 @@ Route::group([
             // Deleted
             Route::get('delete', 'UserStatusController@delete')->name('user.delete-permanently');
             Route::get('restore', 'UserStatusController@restore')->name('user.restore');
+
+            // Verify
+            Route::get('account/verify/show', 'UserVerificationController@show')->name('user.account.verify.show');
+            Route::patch('account/verify/update', 'UserVerificationController@update')->name('user.account.verify.update');
+
         });
     });
 

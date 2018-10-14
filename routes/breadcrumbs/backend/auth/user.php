@@ -25,6 +25,11 @@ Breadcrumbs::for('admin.auth.user.show', function ($trail, $id) {
     $trail->push(__('menus.backend.access.users.view'), route('admin.auth.user.show', $id));
 });
 
+Breadcrumbs::for('admin.auth.user.account.verify.show', function ($trail, $id) {
+    $trail->parent('admin.auth.user.index');
+    $trail->push(__('menus.backend.access.users.verify'), route('admin.auth.user.account.verify.show', $id));
+});
+
 Breadcrumbs::for('admin.auth.user.edit', function ($trail, $id) {
     $trail->parent('admin.auth.user.index');
     $trail->push(__('menus.backend.access.users.edit'), route('admin.auth.user.edit', $id));

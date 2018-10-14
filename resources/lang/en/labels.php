@@ -95,6 +95,7 @@ return [
                     'roles'          => 'Roles',
                     'social' => 'Social',
                     'total'          => 'user total|users total',
+                    'verified'       => 'Verified'
                 ],
 
                 'tabs' => [
@@ -106,6 +107,8 @@ return [
                     'content' => [
                         'overview' => [
                             'avatar'       => 'Avatar',
+                            'photoID'      => 'Photo ID',
+                            'verify'       => 'Verify',
                             'confirmed'    => 'Confirmed',
                             'created_at'   => 'Created At',
                             'deleted_at'   => 'Deleted At',
@@ -123,6 +126,7 @@ return [
                 ],
 
                 'view' => 'View User',
+                'verify' => 'Verify User'
             ],
         ],
     ],
@@ -167,6 +171,31 @@ return [
                 'first_name'         => 'First Name',
                 'last_name'          => 'Last Name',
                 'update_information' => 'Update Information',
+                'address'                   => 'Address',
+                'work'                      => 'Current Work Place',
+                'designation'               => 'Designation',
+                'password'                  => 'Password',
+                'category'                  => 'Category',
+                'country'                   => 'Country',
+                'birthday'                  => 'Birthday',
+                'gender'                    => 'Gender',
+                'password_confirmation'     => 'Password Confirmation',
+                'phone'                     => 'Phone',
+                'message'                   => 'Message',
+                'new_password'              => 'New Password',
+                'thesis'                    => 'Thesis Paper',
+                'new_password_confirmation' => 'New Password Confirmation',
+                'old_password'              => 'Old Password',
+                'timezone'                  => 'Timezone',
+                'language'                  => 'Language',
+                'topic'                     => 'Phd Topic/Area',
+                'institution'               => 'Institution',
+                'supervisor'                => 'Supervisor',
+                'postcode'                  => 'Post/Zip Code',
+                'state'                     => 'State',
+                'city'                      => 'City',
+                'upload_identity'           => 'Upload Your Photo ID',
+                'country_phd'               => 'PhD Country',
             ],
         ],
 

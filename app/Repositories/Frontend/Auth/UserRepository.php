@@ -92,6 +92,7 @@ class UserRepository extends BaseRepository
     public function create(array $data)
     {
         return DB::transaction(function () use ($data) {
+
             $user = parent::create([
                 'first_name'        => $data['first_name'],
                 'last_name'         => $data['last_name'],
@@ -101,6 +102,15 @@ class UserRepository extends BaseRepository
                 'address'           => $data['address'],
                 'work'              => $data['work'],
                 'designation'       => $data['designation'],
+                'birthday'          => $data['birthday'],
+                'gender'            => $data['gender'],
+                'topic'             => $data['topic'],
+                'institution'       => $data['institution'],
+                'supervisor'        => $data['supervisor'],
+                'country_phd'       => $data['country_phd'],
+                'city'              => $data['city'],
+                'state'             => $data['state'],
+                'zip'               => $data['postcode'],
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'active'            => 1,
                 'password'          => $data['password'],
@@ -144,11 +154,28 @@ class UserRepository extends BaseRepository
      */
     public function update($id, array $input, $image = false)
     {
+
         $user = $this->getById($id);
         $user->first_name = $input['first_name'];
         $user->last_name = $input['last_name'];
         $user->timezone = $input['timezone'];
         $user->avatar_type = $input['avatar_type'];
+        $user->country = $input['country'];
+        $user->address = $input['address'];
+        $user->work = $input['work'];
+        if($input['birthday']!= null)
+        {
+            $user->birthday = $input['birthday'];
+        }
+        $user->gender = $input['gender'];
+        $user->topic = $input['topic'];
+        $user->institution = $input['institution'];
+        $user->supervisor = $input['supervisor'];
+        $user->country_phd = $input['country_phd'];
+        $user->city = $input['city'];
+        $user->state = $input['state'];
+        $user->zip = $input['zip'];
+
 
         // Upload profile image if necessary
         if ($image) {
@@ -244,6 +271,24 @@ class UserRepository extends BaseRepository
         }
 
         throw new GeneralException(__('exceptions.frontend.auth.confirmation.mismatch'));
+    }
+
+    /**
+     * @param $id
+     * @param bool $identity
+     */
+    public function confirmID($id, $identity = false)
+    {
+
+        $user = $this->getById($id);
+        if ($identity) {
+            $user->upload_identity = $identity->store('/identity', 'public');
+            $user->upload_status = true;
+            $user->upload_date = Carbon::now()->toDateTimeString();
+        }
+
+        return $user->save();
+
     }
 
     /**
