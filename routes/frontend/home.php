@@ -20,6 +20,12 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
          */
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+        Route::get('chat', 'ChatController@index')->name('chat');
+        Route::get('chat/{id}', 'ChatController@show')->name('chat.show');
+        Route::post('chat/getChat/{id}', 'ChatController@getChat');
+        Route::post('chat/sendChat/', 'ChatController@sendChat');
+
+
         /*
          * User Account Specific
          */

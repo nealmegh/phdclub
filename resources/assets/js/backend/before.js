@@ -6,5 +6,5 @@
 
 // Loaded before CoreUI app.js
 require('../bootstrap');
-require('pace');
+// require('pace');
 require('../plugins');

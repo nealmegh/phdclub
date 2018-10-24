@@ -78,81 +78,106 @@
                                         </div><!--card-header-->
 
                                         <div class="card-body">
-                                            Welcome to PhD Club. This is user Dashboard.
+                                            <meta name="toId" content="{{$user->id}}">
+                                            <div class="container bootstrap snippet">
+
+                                                <div class="header">
+                                                    <h3 class="text-muted prj-name">
+                                                        {{--<span class="fa fa-users fa-2x principal-title"></span>--}}
+                                                        {{$user->name}} - Chat
+                                                    </h3>
+                                                </div>
+                                            </div>
+
+
+                                            <chat v-bind:chats="chats" v-bind:fromid ="{{$logged_in_user->id}}" v-bind:toid ="{{ $user->id}}"></chat>
+
+
                                         </div><!--card-body-->
                                     </div><!--card-->
                                 </div><!--col-md-6-->
                             </div><!--row-->
 
                             {{--<div class="row">--}}
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
+                            {{--<div class="col">--}}
+                            {{--<div class="card mb-4">--}}
+                            {{--<div class="card-header">--}}
+                            {{--Item--}}
+                            {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
+                            {{--<div class="card-body">--}}
+                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                            {{--</div><!--card-body-->--}}
+                            {{--</div><!--card-->--}}
+                            {{--</div><!--col-md-6-->--}}
                             {{--</div><!--row-->--}}
 
                             {{--<div class="row">--}}
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
+                            {{--<div class="col">--}}
+                            {{--<div class="card mb-4">--}}
+                            {{--<div class="card-header">--}}
+                            {{--Item--}}
+                            {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
+                            {{--<div class="card-body">--}}
+                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                            {{--</div><!--card-body-->--}}
+                            {{--</div><!--card-->--}}
+                            {{--</div><!--col-md-6-->--}}
 
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
+                            {{--<div class="col">--}}
+                            {{--<div class="card mb-4">--}}
+                            {{--<div class="card-header">--}}
+                            {{--Item--}}
+                            {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
+                            {{--<div class="card-body">--}}
+                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                            {{--</div><!--card-body-->--}}
+                            {{--</div><!--card-->--}}
+                            {{--</div><!--col-md-6-->--}}
 
-                                {{--<div class="w-100"></div>--}}
+                            {{--<div class="w-100"></div>--}}
 
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
+                            {{--<div class="col">--}}
+                            {{--<div class="card mb-4">--}}
+                            {{--<div class="card-header">--}}
+                            {{--Item--}}
+                            {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
+                            {{--<div class="card-body">--}}
+                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                            {{--</div><!--card-body-->--}}
+                            {{--</div><!--card-->--}}
+                            {{--</div><!--col-md-6-->--}}
 
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
+                            {{--<div class="col">--}}
+                            {{--<div class="card mb-4">--}}
+                            {{--<div class="card-header">--}}
+                            {{--Item--}}
+                            {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
-                            </div><!--row-->
-                        </div><!--col-md-8-->
-                    </div><!-- row -->
-                </div> <!-- card-body -->
-            </div><!-- card -->
-        </div><!-- row -->
+                            {{--<div class="card-body">--}}
+                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
+                            {{--</div><!--card-body-->--}}
+                            {{--</div><!--card-->--}}
+                            {{--</div><!--col-md-6-->--}}
+                        </div><!--row-->
+                    </div><!--col-md-8-->
+                </div><!-- row -->
+            </div> <!-- card-body -->
+        </div><!-- card -->
+    </div><!-- row -->
     {{--</div><!-- row -->--}}
+
+
+
+
+
+
+
+
+
+        {{--{{$user}}--}}
+
 @endsection

@@ -3,6 +3,7 @@
 @section('title', app_name() . ' | '. __('navs.frontend.dashboard') )
 
 @section('content')
+
     <div class="row mb-4">
         <div class="col">
             <div class="card">
@@ -76,83 +77,98 @@
                                         <div class="card-header">
                                             Welcome
                                         </div><!--card-header-->
+{{--Rubai Chat start--}}
+
+                                        <div class="container bootstrap snippet">
+
+                                            <div class="header">
+                                                <h3 class="text-muted prj-name">
+                                                    <span class="fa fa-users fa-2x principal-title"></span>
+                                                    User Chat Zone
+                                                </h3>
+                                            </div>
+                                        </div>
+
+
+                                        @foreach($users as $user)
+
+                                            <li href="#" class="list-group-item text-left">
+                                                {{--<img class="img-thumbnail"  src="https://bootdey.com/img/Content/user_1.jpg">--}}
+                                                <label class="name" style="width:100%">
+                                                    <a href="/chat/{{$user->id}}" class="panel-block" style="justify-content: space-between;">{{$user->Name}}
+                                                        <onlineuser v-bind:user="{{$user}}" v-bind:onlineusers="onlineUsers"></onlineuser>
+
+                                                    </a>
+                                                </label>
+
+                                                <div class="break"></div>
+                                            </li>
+
+                                        @endforeach
+
+                                        {{--Rubai Chat end--}}
+
+
+
 
                                         <div class="card-body">
-                                            Welcome to PhD Club. This is user Dashboard.
+
                                         </div><!--card-body-->
                                     </div><!--card-->
                                 </div><!--col-md-6-->
                             </div><!--row-->
 
-                            {{--<div class="row">--}}
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
+                        </div><!--row-->
+                    </div><!--col-md-8-->
+                </div><!-- row -->
+            </div> <!-- card-body -->
+        </div><!-- card -->
+    </div><!-- row -->
+{{--</div><!-- row -->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
-                            {{--</div><!--row-->--}}
 
-                            {{--<div class="row">--}}
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
 
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
 
-                                {{--<div class="w-100"></div>--}}
 
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
 
-                                {{--<div class="col">--}}
-                                    {{--<div class="card mb-4">--}}
-                                        {{--<div class="card-header">--}}
-                                            {{--Item--}}
-                                        {{--</div><!--card-header-->--}}
 
-                                        {{--<div class="card-body">--}}
-                                            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.--}}
-                                        {{--</div><!--card-body-->--}}
-                                    {{--</div><!--card-->--}}
-                                {{--</div><!--col-md-6-->--}}
-                            </div><!--row-->
-                        </div><!--col-md-8-->
-                    </div><!-- row -->
-                </div> <!-- card-body -->
-            </div><!-- card -->
-        </div><!-- row -->
-    {{--</div><!-- row -->--}}
+
+
+
+
+
+
+
+
+
+    {{--This is Chat--}}
+    {{--<div class="container bootstrap snippet">--}}
+
+        {{--<div class="header">--}}
+            {{--<h3 class="text-muted prj-name">--}}
+                {{--<span class="fa fa-users fa-2x principal-title"></span>--}}
+                {{--User Chat Zone--}}
+            {{--</h3>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+
+
+    {{--@foreach($users as $user)--}}
+
+        {{--<li href="#" class="list-group-item text-left">--}}
+            {{--<img class="img-thumbnail"  src="https://bootdey.com/img/Content/user_1.jpg">--}}
+            {{--<label class="name">--}}
+               {{--<a href="/chat/{{$user->id}}" class="panel-block" style="justify-content: space-between;"> <div>{{$user->Name}}</div>--}}
+               {{--<onlineuser v-bind:user="{{$user}}" v-bind:onlineusers="onlineUsers"></onlineuser>--}}
+
+               {{--</a>--}}
+            {{--</label>--}}
+
+            {{--<div class="break"></div>--}}
+        {{--</li>--}}
+
+    {{--@endforeach--}}
 @endsection
