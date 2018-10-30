@@ -6997,19 +6997,51 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['user', 'onlineusers'],
     methods: {
         checkUser: function checkUser() {
-            var _this = this;
-
-            // return this.onlineusers.filter(item => item.id == this.user.id).length!==0;
-            return this.onlineusers ? this.onlineusers.filter(function (item) {
-                return item.id == _this.user.id;
-            }).length !== 0 : false;
+            // console.log(this.onlineusers[1].id);
+            // console.log(this.user);
+            // return this.user;
+            // let currentUser = this.user;
+            // let returningUser;
+            // this.onlineusers.forEach(function(arrayUser){
+            //     // console.log(arrayUser.id);
+            //     if(arrayUser.id === currentUser.id){
+            //         console.log("returning"+currentUser.id);
+            //         returningUser = currentUser;
+            //     }
+            // });
+            //
+            // if(returningUser === undefined) {
+            //     return false;
+            //     // returningUser = this.user;
+            //     // console.log(this.user);
+            // }
+            // console.log(returningUser);
+            // return returningUser;
+            console.log(_.find(this.onlineusers, { id: this.user.id }));
+            return _.find(this.onlineusers, { id: this.user.id });
+            // return this.onlineusers[1];
         }
     }
+
 });
 
 /***/ }),
@@ -59067,7 +59099,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "pull-right" })
+  return _c("div", { staticClass: "pull-right" }, [
+    _vm.checkUser() ? _c("i", { staticClass: "fa fa-circle green" }) : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -70737,7 +70771,7 @@ var app = new Vue({
     el: '#app',
     data: {
         chats: '',
-        onlineUsers: ''
+        onlineUsers: []
     },
     created: function created() {
         var _this = this;

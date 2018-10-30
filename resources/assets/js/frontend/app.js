@@ -25,7 +25,7 @@ const app = new Vue({
     el: '#app',
     data: {
         chats:'',
-        onlineUsers: ''
+        onlineUsers: []
     },
     created(){
         const fromId = $('meta[name="fromId"]').attr('content');
