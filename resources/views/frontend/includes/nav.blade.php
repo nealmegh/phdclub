@@ -37,6 +37,7 @@
                         @endcan
 
                         <a href="{{ route('frontend.user.account') }}" class="dropdown-item {{ active_class(Active::checkRoute('frontend.user.account')) }}">{{ __('navs.frontend.user.account') }}</a>
+                        <a href="{{ route('frontend.user.chat') }}" class="dropdown-item {{ active_class(Active::checkRoute('frontend.user.chat')) }}">{{ __('navs.frontend.user.chat') }}</a>
                         <a href="{{ route('frontend.auth.logout') }}" class="dropdown-item">{{ __('navs.general.logout') }}</a>
                     </div>
                 </li>
