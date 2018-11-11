@@ -39,11 +39,17 @@
                                             <i class="fas fa-user-circle"></i> {{ __('navs.frontend.user.account') }}
                                         </a>
 
+
+                                        <a href="{{ route('frontend.user.chat')}}" class="btn btn-info btn-sm mb-1">
+                                            <i class="fas fa-comments"></i> {{"Chat"}}
+                                        </a>
+
                                         @can('view backend')
                                             &nbsp;<a href="{{ route ('admin.dashboard')}}" class="btn btn-danger btn-sm mb-1">
                                                 <i class="fas fa-user-secret"></i> {{ __('navs.frontend.user.administration') }}
                                             </a>
                                         @endcan
+
                                     </p>
                                 </div>
                             </div>
