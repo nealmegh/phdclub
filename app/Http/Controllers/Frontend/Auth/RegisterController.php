@@ -49,7 +49,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        $categoryModels = category::all();
+        $categoryModels = category::orderBy('name')->get();
         foreach ($categoryModels as $categoryModel)
         {
             $categories[$categoryModel->id] =  $categoryModel->name;
